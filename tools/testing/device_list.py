@@ -13,7 +13,6 @@ import wyze_sdk.errors
 # p2pUrl = '|wyze-test-list.cloudlinks.cn|42.194.219.201'
 # wyzeP2pUrl = '|wyze-mars-asrv.wyzecam.com'
 # mars_url = 'https://wyze-mars-service.wyzecam.com/plugin/mars/v2/regist_gw_user/GW_BE1_7C78B2A2AD34'
-mars_path_url = '/plugin/mars/v2/regist_gw_user/GW_BE1_7C78B2A2AD34'
 
 wyze_sdk.set_file_logger('wyze_sdk', filepath='wyze_out.txt', level=wyze_sdk.logging.DEBUG)
 mars_base_url = 'https://wyze-mars-service.wyzecam.com'
@@ -22,6 +21,7 @@ psswd = os.enviornment["WYZE_PASSWORD"]
 key_id = os.environment["WYZE_KEY_ID"]
 api_key = os.environment["WYZE_API_KEY"]
 deviceId = os.environment["WYZE_DOORBELL_DEVICE_ID"]
+mars_path_url = f'/plugin/mars/v2/regist_gw_user/{deviceId}'
 
 last_token_fetch_time = 0
 current_response = None
